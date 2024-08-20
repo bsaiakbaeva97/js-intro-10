@@ -1,0 +1,20 @@
+
+if else in programming it controls the flow of the statement or conditional statement.
+
+if (condition){
+    // if block
+}
+else{
+    // else block
+}
+
+// When we have several options
+
+if(){
+    //block
+}
+else if() {
+}
+
+Rules:
+- else block or else if blocks cannot

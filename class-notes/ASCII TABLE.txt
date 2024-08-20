@@ -1,0 +1,10 @@
+ASCII represantation of charachters
+
+32              SPACE
+48 - 57         (0 - 9)
+65 - 90         (a - z)
+97 - 122        (A - Z)
+
+The rest are special charcters
+
+

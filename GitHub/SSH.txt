@@ -1,0 +1,14 @@
+Generating SSH public key
+SSH secured shell used for authentification
+
+Step 1: Generate a new SSH key using the below command
+ssh-keygen
+
+Step 2: Get the public key and add it to your GitHub account
+
+More details at https://docs.github.com/en
+
+Get to HOME Directory: cmd + shift + h
+Reveal all the hidden files/folders: cmd + shift + .
+
+npm
