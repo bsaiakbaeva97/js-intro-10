@@ -1,14 +1,25 @@
-const names = [ 'alex', 'Adam', 'Jane', 'John', 'alexander'];
-const sortNames = names.sort();
+const names = [ 'alex', 'Adam', 'Jane', 'John', 'alexander' ];
 
-console.log(names.sort()); // [ 'Adam', 'Jane', 'John', 'alex', 'alexander' ]
-console.log(sortNames); // [ 'Adam', 'Jane', 'John', 'alex', 'alexander' ]
+// Adam, Jane, John, Z, alex, alexander
 
-// It sorts the array elements alphabatically and according to ASCII. 
-// It puts strings with capital letter first
+const sortedNames = names.sort();
 
-const nums = [ 1, 40, 2, 3, 10, 100 ];
+console.log(names); // [ 'Adam', 'Jane', 'John', 'alex', 'alexander' ]
+console.log(sortedNames); // [ 'Adam', 'Jane', 'John', 'alex', 'alexander' ]
 
-console.log(nums.sort((a, b) => a - b)); // [ 1, 2, 3, 10, 40, 100 ]
-console.log(nums.sort((a, b) => b - a)); // [ 1, 2, 3, 10, 40, 100 ]
+
+const numbers = [ 1, 40, 2, 3, 10, 4, 100 ]; 
+
+// 1, 2, 3, 10, 40, 100 -> our expectation but sort method without arguments considers elements as strings. ISSUE
+
+const numbersSorted = numbers.sort();
+
+console.log(numbers); // [ 1, 10, 100, 2, 3, 4, 40 ]
+console.log(numbersSorted); // [ 1, 10, 100, 2, 3, 4, 40 ]
+
+const nums = [ 1, 40, 2, 3, 10, 4, 100 ]; 
+
+nums.sort((x, y) => x - y);
+
+console.log(nums); // [ 1, 2, 3, 4, 10, 40, 100 ]
 

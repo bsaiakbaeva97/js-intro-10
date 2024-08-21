@@ -1,0 +1,7 @@
+
+08-20-2024 JS LOOPS INTRO
+
+1. FOR LOOP
+- also known as i loop or traditional loop
+- it uses 3 expression
+- it uses 
