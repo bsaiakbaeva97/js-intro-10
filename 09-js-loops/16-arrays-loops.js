@@ -43,3 +43,10 @@ for(const city of cities) {
 }
 
 console.log(citiesWithLength6OrMore);
+
+const citiesWithI = [];
+for(const city of cities) {
+    if(city.toLowerCase().includes('i')) citiesWithI.push(city);
+}
+
+console.log(citiesWithI);
