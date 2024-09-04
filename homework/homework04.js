@@ -194,6 +194,18 @@ for(const element of array) {
 
  console.log(dublicates);
 
+ function getDuplicates(arr){
+    let newArr = [];
+    for(let i = 0; i <= arr.length - 1; i++){
+        for(let j = i + 1; j <= arr.length - 1; j++){
+            if(arr[i] === arr[j] && !newArr.includes(arr[i])){
+                newArr.push(arr[i]);
+            }
+        }
+    }
+    return newArr;
+}
+
 console.log('\n---------------TASK-17-----------------\n');
 
 let string = 'I like JavaScript'
@@ -236,5 +248,5 @@ function getEvens(num1, num2) {
    return newArrNumbers;
 }
 
-console.log(getEvens(2, 4));
+console.log(getEvens(5, 4));
 
