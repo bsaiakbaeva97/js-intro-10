@@ -39,13 +39,7 @@ function countConsonants(string) {
 
 console.log(countConsonants('Hello World'));
 
-console.log('\n---------------TASK-6-----------------\n');
 
-function factorial(number) {
-   return number.reduce((acc, curr) => (acc * curr, 1));
-} 
-
-console.log(factorial(5));
 
 console.log('\n---------------TASK-7-----------------\n');
 
