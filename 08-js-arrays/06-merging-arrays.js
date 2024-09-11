@@ -27,7 +27,7 @@ const obj4 = [...obj1, ...obj2];
 console.log(obj1); // [ 'Watch', 'Phone', 'Laptop' ]
 console.log(obj2); // [ 'Camera', 'Desk' ]
 console.log(obj3); // [ 'Watch', 'Phone', 'Laptop', 'Camera', 'Desk' ]
-console.log(obj4); // [ 'Watch', 'Phone', 'Laptop', 'Camera', 'Desk' ]
+console.log(...obj4); // [ 'Watch', 'Phone', 'Laptop', 'Camera', 'Desk' ]
 
 
 

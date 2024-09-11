@@ -185,14 +185,6 @@ console.log(array2);
 console.log(array3);
 
 console.log('\n---------------TASK-16-----------------\n');
-const array = [3, 7, 10, 0, 3, 10]
-const dublicates = [];
-
-for(const element of array) {
-    if(element === element[0]) dublicates.push[element];
-}
-
- console.log(dublicates);
 
  function getDuplicates(arr){
     let newArr = [];
@@ -205,6 +197,7 @@ for(const element of array) {
     }
     return newArr;
 }
+
 
 console.log('\n---------------TASK-17-----------------\n');
 
