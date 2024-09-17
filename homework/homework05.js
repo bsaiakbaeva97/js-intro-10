@@ -95,15 +95,15 @@ console.log(countWords(("     Javascript is fun       ")));
 console.log('\n---------------TASK-6-----------------\n');
 
 
-const factorial = (num) => {
-    let total = num;
+const factorial = (arr) => {
+    let total = num
     for(let i = num - 1; i > 1; i--) {
         total *= i;
     }
     return total;
 }
 
-console.log(factorial(5));
+console.log(factorial(5, 4));
 
 
 

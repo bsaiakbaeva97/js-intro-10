@@ -351,11 +351,11 @@ function mostRepeated(arr) {
     let max = 0;
 
     for (let i = 0; i < arr.length; i++){
-        let count = 0;
+     let count = 0;
         for(j = i+1; j < arr.length; j++){
-        if(arr[i]=== arr[j]) count++;
-        }
-    if(count > max){
+            if(arr[i]=== arr[j]) count++;
+            }
+        if(count > max){
         max = count;
         repeatedEl = arr[i];
      }

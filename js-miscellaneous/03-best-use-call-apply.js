@@ -38,6 +38,6 @@ function printName() {
   
   sum.call(student1, 5, 10); // Mark Steve did the sum = 15
   sum.apply(student1, [ 5, 10 ]); // Mark Steve did the sum = 15
-  
+  sum.bind(student2, 50, 100);
   const someFunc = sum.bind(student2, 50, 100);
   someFunc();

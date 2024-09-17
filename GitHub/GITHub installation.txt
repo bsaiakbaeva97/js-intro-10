@@ -1,10 +1,11 @@
 username: bsaiakbaeva97
 password: 29BJtFMX
-gmail: Bsiakabaeva97@gmail.com
+gmail: bsiakabaeva97@gmail.com
 
 git config --global user.name- "bsaiakbaeva97"
-git config --global user.email- bsiakabaeva97@gmail.com
+git config --global user.email- bsaiakabaeva97@gmail.com
 git config --global init.defaultBranch- master
 
 
 git config --list
+
