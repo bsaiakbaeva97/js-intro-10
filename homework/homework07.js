@@ -136,7 +136,7 @@ const arrFactorial = (arr) => arr.map((num) => {
 
 console.log(arrFactorial([1, 0, 6]));
 
-console.log('\n------------------------TASK07------------------------/n');
+console.log('\n------------------------TASK08------------------------/n');
 /*
 Requirement:
 Write a function named categorizeCharacters() which takes a string word as 
