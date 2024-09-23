@@ -233,10 +233,6 @@ isDateFormatValid("10/02/2020 ") 		-> true
 
 
 
-
-
-
-
 console.log('\n---------------TASK-11-----------------\n');
 
 /*

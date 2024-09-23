@@ -1,0 +1,14 @@
+
+09-21-2024 JS Modules
+
+1. Common JS Modules (before ES6)
+module.export and require()
+
+2. ES6 Modules
+export and import
+
+HOW TO RUN JS CODE?
+- browser
+- Node JS
+- extensions (ex: VSCode)
+

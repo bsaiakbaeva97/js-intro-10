@@ -98,6 +98,19 @@ console.log(middleInt(5, 3, 5));
 console.log(middleInt(-1, 25, 10));
 console.log(middleInt(1, 1, 1));
 
+const middleInt1 = (num1, num2, num3) => {
+    let max = Math.max(num1, num2, num3);
+    let min = Math.min(num1, num2, num3);
+
+    if (num1 > max && num1 > min) return num1
+    else if(num1 > max && num1 > min) return num2
+    return num3;
+}
+console.log(middleInt1(1, 2, 2));
+console.log(middleInt1(5, 3, 5));
+console.log(middleInt1(-1, 25, 10));
+console.log(middleInt1(1, 1, 1));
+
 console.log('\n------------------------TASK06------------------------/n');
 /*
 Requirement:
@@ -112,7 +125,7 @@ sumOfDigits("")  -> 0
 
 const sumOfDigits = (str) => [...str].reduce((acc, curr) => curr >= 0 && curr <= 9 ? Number(curr) + acc : acc, 0);
 
-console.log(sumOfDigits("John's age is 29"));
+console.log(sumOfDigits("John's age is -29"));
 
 console.log('\n------------------------TASK07------------------------/n');
 /*
@@ -172,3 +185,4 @@ const categorizeCharacters = (str) => {
 
  console.log(categorizeCharacters("12ab$%3c%"));
 
+console.log([...'-123']);
