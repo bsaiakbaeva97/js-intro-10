@@ -184,13 +184,15 @@ noXInVariables(["xyXyxy", "Xx", "ABC"]) 	-> ["yyy", "ABC"]
 const noXInVariables = (arr) => {
 
    return arr.map((char) => {
-    const noXArr = char.toString().split('').filter((char) => char !== 'x' && char !== 'X').join('');
-    const number = Number(noXArr);
 
-    return isNaN(noXArr) ? noXArr : number;
-})
+    if(isNaN(char)) {
+        
+       return  char.split('').filter((char) => char !== 'x' && char !== 'X').join('')
+    }
+     return char;
+});
 }
 
-console.log(noXInVariables(["xaXbc", 123, "#$%"])); 
+console.log(noXInVariables(["xaXbc", 123, "#$%", 546])); 
 
-console.log(typeof '#$%$')
+console.log(Number('1v'))
