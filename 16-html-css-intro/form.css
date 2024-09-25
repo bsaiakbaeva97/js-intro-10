@@ -1,0 +1,38 @@
+
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+body{
+    background-color:antiquewhite;
+}
+
+form{
+    background-color: aliceblue;
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+
+.group{
+    margin-bottom: 20px;
+}
+
+input, label{
+    width: 100%;
+}
+
+input[type="radio"], 
+input[type="checkbox"], 
+input[type="number"], 
+input[type="date"] {
+    width: auto;
+}
+
+p {
+    font-weight: 900;
+  }

@@ -1,0 +1,14 @@
+
+.group{
+    margin-bottom: 20px;
+}
+
+h1{
+    color: green;
+}
+
+input[type="username"], 
+input[type="password"] {
+    width: auto;
+}
+

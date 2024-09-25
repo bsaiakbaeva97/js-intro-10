@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+
+form{
+
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+
+.group{
+    margin-bottom: 20px;
+}
+
+input, label{
+    width: 100%;
+}
+
+input[type="radio"], 
+input[type="number"] {
+    width: auto;
+}
+
+p {
+    font-weight: 900;
+  }
