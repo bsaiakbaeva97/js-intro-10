@@ -122,7 +122,7 @@ removeStringSpecialsDigits("Automation123#$%") 	-> "Automation"
 */
 
 const removeStringSpecialsDigits = (str) => {
-   return [...str].filter((char) => char.toLowerCase() >= 'a' && char.toLowerCase() <= 'z').join('');
+   return [...str].filter((char) => char.toLowerCase() >= 'a' && char.toLowerCase() <= 'z' || char === ' ').join('');
 }
 console.log(removeStringSpecialsDigits("123Javascript #$%is fun"));
 console.log(removeStringSpecialsDigits("Automation123#$%"));
@@ -138,13 +138,11 @@ removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]) 	-> ["Javascript", 
 removeArraySpecialsDigits(["Cypress", "123$%", "###"]) 	-> ["Cypress", "", ""]
 removeArraySpecialsDigits(["Automation", "123#$%tool"]) 	-> ["Automation", "tool"]
 */
-const removeArraySpecialsDigits = (arr) => arr.map((str) => {
-    const arrStr = str.toLowerCase().split('')
-    return arrStr.filter((ele) => ele >= 'a' && ele <= 'z').join('');
- });
 
 
- console.log(removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]));
+ const removeArraySpecialsDigits = (arr) => arr.map((str) => [...str].filter((char) => char.toLowerCase() >= 'a' && char.toLowerCase() <= 'z' || char === ' ').join(''))
+
+ console.log(removeArraySpecialsDigits(["123Java script  ", "#$%is", "fun"]));
  console.log(removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]) );
  console.log(removeArraySpecialsDigits(["Cypress", "123$%", "###"]));
 
@@ -159,10 +157,14 @@ getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] ) 	-> ["
 getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] ) 	-> ["C#"]
 */
 
-const getCommons =(arr1, arr2) => (arr1).filter((ele) => arr2.includes(ele));
+const getCommons = (arr1, arr2) => {
+   (arr1).filter((ele) => arr2.includes(ele)).filter((ele) => ele || ele === 0);
+
+}
 
 console.log(getCommons(["Javascript", "is", "fun"], ["abc", "xyz", "123"]));
 console.log(getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]));
+console.log(getCommons( ["Javascript", "C#", "C#"], ["Python", "C#", "C++"] ) )
 
 
 
@@ -185,14 +187,10 @@ const noXInVariables = (arr) => {
 
    return arr.map((char) => {
 
-    if(isNaN(char)) {
-        
-       return  char.split('').filter((char) => char !== 'x' && char !== 'X').join('')
-    }
-     return char;
+    if(typeof char === 'string') return  char.split('').filter((char) => char !== 'x' && char !== 'X').join('')
+    return char;
 });
 }
 
-console.log(noXInVariables(["xaXbc", 123, "#$%", 546])); 
+console.log(noXInVariables(["x", 123, "#$%", 546])); 
 
-console.log(Number('1v'))

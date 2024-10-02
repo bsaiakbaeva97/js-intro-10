@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Working with Node content</h1>
+    <div id="box">
+        <!--empty content-->
+    </div>
+
+    <script>
+        const box = document.getElementById('box');
+        
+
+        box.innerHTML = 'Box content'
+
+        box.innerHTML = '<p>Text inside the box</p>'
+
+        box.innerHTML = '<p>Another sentence in the box</p>'
+
+        box.innerHTML += '<p>Last sentence in the box</p>'
+
+        // Creating Element
+
+        const h4El = document.createElement('h4');
+        console.log(h4El);
+
+        h4El.innerHTML = 'h4 element content'
+        console.log(h4El);
+
+        const h5El = document.createElement('h5');
+        console.log(h4El);
+
+        h5El.innerHTML = 'h5 element content'
+        console.log(h5El);
+
+        box.append(h4El, h5El);
+        
+        
+    </script>
+</body>
+</html>

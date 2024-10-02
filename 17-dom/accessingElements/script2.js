@@ -27,3 +27,4 @@ console.log(heading1);
 // Access all elements
 const boxes3 = document.querySelectorAll('.box');
 console.log(boxes3);
+
