@@ -96,7 +96,7 @@ console.log('\n---------------TASK-6-----------------\n');
 
 
 const factorial = (arr) => {
-    let total = num
+    let total = num 
     for(let i = num - 1; i > 1; i--) {
         total *= i;
     }
@@ -113,10 +113,10 @@ console.log(factorial(5, 4));
 console.log('\n---------------TASK-7-----------------\n');
 
 function isPalindrome(string) {
-   return string === string.split('').reverse().join('') ? true : false;
+   return string === string.split('').reverse().join('') 
 }
 
-console.log(isPalindrome('aba'));
+console.log(isPalindrome('abca'));
 
 
 console.log('\n---------------TASK-8-----------------\n');

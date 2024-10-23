@@ -204,7 +204,7 @@ removeDuplicates(["1", "2", "3", "2", "3"]) 		-> ["1", "2", "3"]
 
 function removeDuplicates(array) {
     let duplicate = [];
-    array.map((ele) => !duplicate.includes(ele ? duplicate.push(ele) : ''));
+    array.map((ele) => !duplicate.includes(ele) ? duplicate.push(ele) : '');
     return  duplicate;
 }
 

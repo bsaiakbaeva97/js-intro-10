@@ -130,7 +130,7 @@ countOccurrencesOfCharacters("www" ) -> "3w"
 
 function countOccurrencesOfCharacters (str) {
     const charCount = {};
-    const result = []
+    const result = [];
     if (str === '') return '';
 
     for(const char of str){
@@ -148,7 +148,26 @@ function countOccurrencesOfCharacters (str) {
 
 console.log(countOccurrencesOfCharacters("abc"));  
 
+// Other way
+const countOccurrencesOfCharacters1 = str => {
+    if(str === '') return '';
 
+    let result = '';
+    let currChar = str[0]
+    let currCount = 1;
+
+    for(let i = 1; i < str.length; i++){
+        if(str[i] === currChar) currCount++;
+        else{
+            result += currCount + currChar
+            currCount = 1
+            currChar = str[i]
+        }
+    }
+
+    result += currCount + currChar
+    return result
+}
 
 console.log ('\n---------------TASK06--------------/n');
 /*Requirement:
@@ -166,9 +185,10 @@ fibonacciSeries1(2)  -> [0, 1]
 */
 
 function fibonacciSeries1 (num){
-    const result = [];
-    if (num >= 1) result.push(0); 
-    if (num >= 2) result.push(1); 
+    const result = [0, 1];
+    if (num === 1) return [0]; 
+    if (num === 2) return [0, 1]; 
+
     for(i = 2; i < num; i++){
 
         const nextNum = result[i - 1] + result[i - 2];
@@ -177,7 +197,7 @@ function fibonacciSeries1 (num){
     return result;
 }
 
-console.log(fibonacciSeries1(2))
+console.log(fibonacciSeries1(5))
 
 
 
@@ -197,12 +217,27 @@ fibonacciSeries2(9)  -> 21
 fibonacciSeries2(1)  -> 0
 */
 function fibonacciSeries2 (num){
-    const result = [];
-    if (num >= 1) result.push(0); 
-    if (num >= 2) result.push(1); 
+    const result = [0, 1];
+    if (num === 1) return 0; 
+    if (num === 2) return 1; 
+
+    for(i = 2; i < num; i++){
+
+        const nextNum = result[i - 1] + result[i - 2];
+        result.push(nextNum);
+    }
+    return result[result.length - 1];
 }
 
+console.log(fibonacciSeries2(5))
+
 console.log(fibonacciSeries2(2))
+
+// Recursion
+const fibonacciSeries2Rec = num => {
+    return num === 1 ? 0 : num === 2 || num === 3 ? 1: fibonacciSeries2(num-1) + fibonacciSeries2(num-2)
+    }
+
 console.log ('\n---------------TASK08--------------/n');
 /*Requirement:
 Requirement:
@@ -234,12 +269,22 @@ function findUniques (arr1, arr2) {
     return unique;
 }
 
+
+
 console.log(findUniques([], [1,2,3,3]))
 console.log(findUniques([1, 2, 3, 3], []))
 console.log(findUniques([8,9], [9, 8, 9]))
 console.log(findUniques([-1, -2], [1, 2]))
 
+// With set
 
+const findUniques = (arr1,arr2) => {
+    const concatArr = arr1.concat(arr2)
+    const filteredArr = concatArr.filter(ele => !(arr1.includes(ele) && arr2.includes(ele)))
+    const set = new Set(filteredArr)
+
+    return [...set]
+}
 console.log ('\n---------------TASK09--------------/n');
 /*Requirement:
 Requirement:
@@ -258,6 +303,7 @@ isPowerOf3(81)  -> true
 isPowerOf3(9)  -> true
 */
 
+// While loop
 function isPowerOf3 (num) {
     while (num % 3 === 0) {
         num /= 3;
@@ -265,6 +311,17 @@ function isPowerOf3 (num) {
 
         return num === 1;
 }
-    
+
+// For loop
+ const isPowerOf3 = num => {
+    for(let i = num; i >= 1; i /= 3){
+         if(i === 1) return true
+    }
+  return false
+}
+
+
+//Recursion
+const isPowerOf3 = num => num === 1 ? true : num % 3 !== 0 ? false : isPowerOf3(num/3)
 
 console.log(isPowerOf3(243))
