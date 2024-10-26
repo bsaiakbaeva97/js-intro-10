@@ -28,7 +28,7 @@ function calculateTotalPrice1(fruit) {
 
     for (const key in fruit) {
         const quantity = fruit[key]; // Access the quantity using the key
-        const price = prices[key];
+        const price = prices[key]; // Access the prices
         totalPrice += quantity * price; 
     }
 
@@ -84,13 +84,13 @@ function calculateTotalPrice2(fruit) {
         else totalPrice += quantity * price;
     }
 
-    return totalPrice;
+    return totalPrice === 0 ? totalPrice: totalPrice.toFixed(2);
 }
 
 
 console.log(calculateTotalPrice2({ Apple: 3, Mango: 5 }))
 console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }) )
-
+console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 }) )
 
 console.log ('\n---------------TASK03--------------/n');
 /*
@@ -140,11 +140,10 @@ isArmstrong(1111) 	-> false
 
 const isArmstrong = (num) => {
     const arrNum = num.toString().split('');
-    const arrLength = arrNum.length;
     let total = 0;
 
     for(const num of arrNum){
-       total += num ** arrLength;
+       total += num ** arrNum.length;
     }
 
     return total === num;
@@ -157,7 +156,8 @@ console.log(isArmstrong(1634));
 console.log ('\n---------------TASK05--------------/n');
 /*
 Requirement:
-Write a function named reverseNumber() which takes a number argument and returns it back reversed without converting it to a String.
+Write a function named reverseNumber() which takes a number argument and returns 
+it back reversed without converting it to a String.
 Note: Do not convert number to string to complete the task.
 
 Examples:
@@ -180,7 +180,7 @@ function reverseNumber(num) {
     return reversedNum;
 }
 
-console.log(reverseNumber(371))
+console.log(reverseNumber(3710))
 console.log ('\n---------------TASK06--------------/n');
 /*
 Requirement:
