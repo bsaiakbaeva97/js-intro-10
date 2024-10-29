@@ -13,9 +13,8 @@ countPalindrome("")  -> 0
 countPalindrome("No palindrome here")  -> 0
  */
 
-const countPalindrome = (str) => {
-    return str.toLowerCase().split(' ').filter((word) => word === '' ? 0 : word.split('').reverse().join('') === word).length
-}
+const countPalindrome = (str) => str.toLowerCase().split(' ').filter((word) => word === '' ? 0 : word.split('').reverse().join('') === word).length
+
 
 console.log(countPalindrome("Mom and Dad" ));
 console.log(countPalindrome("See you at noon"));
@@ -117,15 +116,22 @@ canFormString("CONVERSATION", "voices rant on")   -> true
 canFormString("12", "123")  -> false
 */
 
-function canFormString(str1, str2){
-    let arrStr2 = str2.toLowerCase().split('');
-    let arrStr1 = str1.toLowerCase().split('');
-    for(let i = 0; i < arrStr2.length; i++) {
-        if(!arrStr1.includes(arrStr2[i])) return false
+function canFormString(str1, str2) {
+    const sortStr = (str) => str.toLowerCase().replace(/\s+/g, '').split('').sort().join('');
+    const sortedStr1 = sortStr(str1);
+    const sortedStr2 = sortStr(str2);
+    
+    let j = 0;
+    
+    for(let i = 0; i < sortedStr1.length; i++){
+        if (j < sortedStr2.length && sortedStr1[i] === sortedStr2[j]) {
+            j++;
+        }
     }
-
-    return true
+    
+    return j === sortedStr2.length; // If all characters in str2 are found
 }
+
 
 console.log(canFormString("Hello", "Hi"));
 console.log(canFormString("programming", "gaming"));
@@ -151,9 +157,10 @@ isAnagram("astronomer", "moon starer")   -> true
 isAnagram("CINEMA", "iceman")   -> true
 */
 function isAnagram(str1, str2){
-    const sortedStr1 = str1.toLowerCase().replace(' ', '').split('').sort().join('');
+    const sortedStr = (str) => str.toLowerCase().replace(' ', '').split('').sort().join('');
+    const sortedStr1 = sortedStr(str1);
     
-    const sortedStr2 = str2.toLowerCase().replace(' ', '').split('').sort().join('');
+    const sortedStr2 = sortedStr(str2);
     
     
     return sortedStr1 === sortedStr2
