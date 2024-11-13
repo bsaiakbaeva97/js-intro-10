@@ -159,25 +159,18 @@ starOut("***")    -> ""
 starOut("   ")      -> "   "
 */
 const starOut = (str) => {
-    let result = '';
-    let i = 0;
-    
-    while (i < str.length) {
-        if (str[i] === '*') {
-            
-            i++;
-            if (i < str.length && str[i] !== '*') {
-                i++;  
-            }
-        } else {
-          
-            result += str[i];
-            i++;
-        }
+    let result = "";
+  
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === '*' || str[i - 1] === '*' || str[i + 1] === '*') {
+        continue; 
+      } else {
+        result += str[i];
+      }
     }
-    
+  
     return result;
-};
+  }
 
 console.log(starOut("ab*cd"));  
 console.log(starOut("ab**cd")); 
