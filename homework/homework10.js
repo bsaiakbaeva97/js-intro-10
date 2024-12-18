@@ -1,4 +1,4 @@
-console.log ('\n---------------TASK01--------------/n');
+console.log("\n---------------TASK01--------------/n");
 /*
 Requirement:
 Write a function named calculateTotalPrice1() which takes an object of some shopping items with their quantities as key-value pairs and returns the total price of the given items based on the price list below.
@@ -17,27 +17,27 @@ calculateTotalPrice1({ apple: 1, pineapple: 1, orange: 0, mango:1 }) 	-> 12.24
 */
 
 function calculateTotalPrice1(fruit) {
-    let totalPrice = 0;
+  let totalPrice = 0;
 
-    const prices = {
-        apple: '2',
-        orange: '3.29',
-        mango: '4.99',
-        pinapple: '5.25'
-    }
+  const prices = {
+    apple: "2",
+    orange: "3.29",
+    mango: "4.99",
+    pinapple: "5.25",
+  };
 
-    for (const key in fruit) {
-        const quantity = fruit[key]; // Access the quantity using the key
-        const price = prices[key]; // Access the prices
-        totalPrice += quantity * price; 
-    }
+  for (const key in fruit) {
+    const quantity = fruit[key]; // Access the quantity using the key
+    const price = prices[key]; // Access the prices
+    totalPrice += quantity * price;
+  }
 
-    return totalPrice;
+  return totalPrice;
 }
 
-console.log(calculateTotalPrice1({ apple: 3, mango: 1 }))
+console.log(calculateTotalPrice1({ apple: 3, mango: 1 }));
 
-console.log ('\n---------------TASK02--------------/n');
+console.log("\n---------------TASK02--------------/n");
 /*
 Requirement:
 Write a function named calculateTotalPrice2() which takes an object of some shopping items with their quantities as key-value pairs and returns the total price of the given items based on the price list below.
@@ -58,41 +58,39 @@ calculateTotalPrice2({ Apple: 0, Pineapple: 0, Orange: 0 }) 		-> 0
 calculateTotalPrice1({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 }) 	-> 29.51
 */
 function calculateTotalPrice2(fruit) {
-    let totalPrice = 0;
+  let totalPrice = 0;
 
-    const prices = {
-        Apple: 2.00,
-        Orange: 3.29,
-        Mango: 4.99,
-        Pineapple: 5.25
-    }
+  const prices = {
+    Apple: 2.0,
+    Orange: 3.29,
+    Mango: 4.99,
+    Pineapple: 5.25,
+  };
 
-    for (const key in fruit) {
-        const quantity = fruit[key]; // Access the quantity using the key
-        const price = prices[key];
+  for (const key in fruit) {
+    const quantity = fruit[key]; // Access the quantity using the key
+    const price = prices[key];
 
-        if(key === 'Apple') {
-            const discountedApples = Math.floor(quantity / 2); 
-            totalPrice += (quantity * price) - (discountedApples * price * 0.5); 
-        }
-        else if(key === 'Mango') {
-            const freeMangos = Math.floor(quantity / 4)
-            const paidMangos = quantity - freeMangos
-            totalPrice += paidMangos * price;  
-        }
+    if (key === "Apple") {
+      const discountedApples = Math.floor(quantity / 2);
+      totalPrice += quantity * price - discountedApples * price * 0.5;
+    } else if (key === "Mango") {
+      const freeMangos = Math.floor(quantity / 4);
+      const paidMangos = quantity - freeMangos;
+      totalPrice += paidMangos * price;
+    } else totalPrice += quantity * price;
+  }
 
-        else totalPrice += quantity * price;
-    }
-
-    return totalPrice === 0 ? totalPrice: totalPrice.toFixed(2);
+  return totalPrice === 0 ? totalPrice : totalPrice.toFixed(2);
 }
 
+console.log(calculateTotalPrice2({ Apple: 3, Mango: 5 }));
+console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }));
+console.log(
+  calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango: 3 })
+);
 
-console.log(calculateTotalPrice2({ Apple: 3, Mango: 5 }))
-console.log(calculateTotalPrice2({ Apple: 4, Mango: 8, Orange: 3 }) )
-console.log(calculateTotalPrice2({ Apple: 4, Pineapple: 1, Orange: 1, Mango:3 }) )
-
-console.log ('\n---------------TASK03--------------/n');
+console.log("\n---------------TASK03--------------/n");
 /*
 Requirement:
 Write a function named nthWord() which takes a string and a number arguments and returns the nth word in the string. 
@@ -107,20 +105,18 @@ nthWord("", 1) 			-> ""
 */
 
 const nthWord = (str, num) => {
-    const strArr = str.split(' ');
-    let strLength = strArr.length;
+  const strArr = str.split(" ");
+  let strLength = strArr.length;
 
-    if(strLength >= num) return strArr[num - 1];
-    else return ''
-}
+  if (strLength >= num) return strArr[num - 1];
+  else return "";
+};
 
 console.log(nthWord("I like programming languages", 2));
 console.log(nthWord("QA stands for Quality Assurance", 4));
 console.log(nthWord("Hello World", 3));
 
-
-
-console.log ('\n---------------TASK04--------------/n');
+console.log("\n---------------TASK04--------------/n");
 /*
 Requirement:
 Write a function named isArmstrong() which takes a number argument and returns true if given number is armstrong, return false otherwise.​
@@ -139,21 +135,21 @@ isArmstrong(1111) 	-> false
 */
 
 const isArmstrong = (num) => {
-    const arrNum = num.toString().split('');
-    let total = 0;
+  const arrNum = num.toString().split("");
+  let total = 0;
 
-    for(const num of arrNum){
-       total += num ** arrNum.length;
-    }
+  for (const num of arrNum) {
+    total += Number(num) ** arrNum.length;
+  }
 
-    return total === num;
-}
+  return total === num;
+};
 
 console.log(isArmstrong(153));
 console.log(isArmstrong(123));
 console.log(isArmstrong(1634));
 
-console.log ('\n---------------TASK05--------------/n');
+console.log("\n---------------TASK05--------------/n");
 /*
 Requirement:
 Write a function named reverseNumber() which takes a number argument and returns 
@@ -169,19 +165,19 @@ reverseNumber(111) 	-> 111
  */
 
 function reverseNumber(num) {
-    let reversedNum = 0;
+  let reversedNum = 0;
 
-    while (num > 0) {
-        const digit = num % 10; // Extract the last digit
-        reversedNum = reversedNum * 10 + digit; // Build the reversed number
-        num = Math.floor(num / 10); // Remove the last digit
-    }
+  while (num > 0) {
+    const digit = num % 10; // Extract the last digit
+    reversedNum = reversedNum * 10 + digit; // Build the reversed number
+    num = Math.floor(num / 10); // Remove the last digit
+  }
 
-    return reversedNum;
+  return reversedNum;
 }
 
-console.log(reverseNumber(3710))
-console.log ('\n---------------TASK06--------------/n');
+console.log(reverseNumber(3710));
+console.log("\n---------------TASK06--------------/n");
 /*
 Requirement:
 Write a function named doubleOrTriple() which takes an array of numbers as argument and a boolean value. 
@@ -196,12 +192,12 @@ doubleOrTriple([0], false) 	-> [0]
 doubleOrTriple([-1, 0, 1], true) 	-> [-2, 0, 2]
 */
 
-const doubleOrTriple = (arr, bool) => bool ? arr.map((num) => num * 2) : arr.map((num) => num * 3)
+const doubleOrTriple = (arr, bool) =>
+  bool ? arr.map((num) => num * 2) : arr.map((num) => num * 3);
 
-console.log(doubleOrTriple([1, 5, 10], false))
+console.log(doubleOrTriple([1, 5, 10], false));
 
-
-console.log ('\n---------------TASK07--------------/n');
+console.log("\n---------------TASK07--------------/n");
 /*
 Requirement:
 Write a function named splitString() which takes a string and a number arguments and returns the string back split by the given number. 
@@ -215,11 +211,11 @@ splitString("Hello", 6) 		-> ""
 splitString("12", 1) 		-> "1 2"
 */
 
-function splitString(str, num){
-    if(str.length < num || str.length % num !== 0) return ''
-    else if(str.length >= num ){
-        return str.slice(0, num) + ' ' + str.slice(num);
-    }
+function splitString(str, num) {
+  if (str.length < num || str.length % num !== 0) return "";
+  else if (str.length >= num) {
+    return str.slice(0, num) + " " + str.slice(num);
+  }
 }
 
 console.log(splitString("JavaScript", 5));

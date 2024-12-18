@@ -1,14 +1,18 @@
-let n1 = '123', n2 = '5', n3 = '5000';
+let n1 = "123",
+  n2 = "5",
+  n3 = "5000";
 
-console.log(n1.padStart(4,' ')); // .123
-console.log(n2.padStart(4,' ')); // ...5
-console.log(n3.padStart(4,' ')); // 5000
+console.log(n1.padStart(4, " ")); // .123
+console.log(n2.padStart(4, " ")); // ...5
+console.log(n3.padStart(4, " ")); // 5000
 
-let s1 = 'Hello', s2 = 'Hi', s3 = 'JavaScript';
+let s1 = "Hello",
+  s2 = "Hi",
+  s3 = "JavaScript";
 
-console.log(s1.padEnd(10, ' '));
-console.log(s2.padEnd(10, ' '));
-console.log(s3.padEnd(10, ' '));
+console.log(s1.padEnd(10, " "));
+console.log(s2.padEnd(10, " "));
+console.log(s3.padEnd(10, " "));
 
 /*
 padStart()
@@ -28,9 +32,10 @@ CHANGE ORIGINAL VALUE: does not change the original value
 STATIC or NON-STATIC: non-static
 */
 
-let s4 = 'Hi'
-console.log(s.repeat(5));
+let s4 = "Hi";
+console.log(s4.repeat(5));
 
-let s = 'TechGlobal'
-console.log(s.slice((s.indexOf('l')), s.lastIndexOf('l')).replace('0', '###').toUpperCase())
-
+let s = "TechGlobal";
+console.log(
+  s.slice(s.indexOf("l"), s.lastIndexOf("l")).replace("0", "###").toUpperCase()
+);
