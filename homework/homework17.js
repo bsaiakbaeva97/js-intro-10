@@ -14,9 +14,8 @@ findMedian([0], [0,1])    -> 0
 */
 
 const findMedian = (arr1, arr2) => {
-  // Combine the two arrays and sort them
   const newArr = [...arr1, ...arr2];
-  const sortedArr = newArr.sort((a, b) => a - b); // Correct sorting
+  const sortedArr = newArr.sort((a, b) => a - b);
 
   const length = sortedArr.length;
 
